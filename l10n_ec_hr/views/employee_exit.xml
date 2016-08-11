@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_employee_exit_form">
+            <field name="name">l10n_ec_hr.employee_exit.form</field>
+            <field name="model">hr.employee_exit</field>
+            <field name="arch" type="xml">
+	        <form string="Desvinculación">
+	            <group colspan="4" col="4">
+	                <field name="name"/>
+	                <field name="employee_id"/>
+	                <field name="request_date"/>
+	                <field name="last_day_work"/>
+                        <field name="contract_id"/>
+                        <field name="approved"/>
+	            </group>
+                    <field name="reason_leaving" placeholder="Razón"/>
+                    <field name="notes" placeholder="Notas"/>
+	        </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_employee_exit_tree">
+            <field name="name">l10n_ec_hr.employee_exit.tree</field>
+            <field name="model">hr.employee_exit</field>
+            <field name="arch" type="xml">
+	        <tree string="Desvinculaciones">
+	            <field name="name"/>
+	            <field name="employee_id"/>
+	            <field name="request_date"/>
+	            <field name="approved"/>
+	        </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_employee_exit">
+            <field name="name">Desvinculaciones</field>
+            <field name="res_model">hr.employee_exit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_employee_exit_tree"/>
+        </record>
+
+        <menuitem name="Desvinculaciones" id="menu_employee_exit"
+                  parent="hr.menu_hr_main" action="action_employee_exit"
+                  sequence="5"/>
+    
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <report 
+             id="action_report_contract"
+             model="hr.contract"
+             string="Contract"
+             report_type="qweb-pdf"
+             name="l10n_ec_hr.report_contract"
+             file="l10n_ec_hr.report_contract"
+        />
+    </data>
+</openerp>
+
+             
